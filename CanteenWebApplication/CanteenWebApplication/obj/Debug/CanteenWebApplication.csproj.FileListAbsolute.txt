@@ -81,3 +81,5 @@ C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\obj\Debug
 C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.dll
 C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\bin\Google.Protobuf.dll
 C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.xml
+C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\bin\MySql.Web.dll
+C:\Users\John\source\repos\CanteenWebApplication\CanteenWebApplication\bin\MySql.Web.xml

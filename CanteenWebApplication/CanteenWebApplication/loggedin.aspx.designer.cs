@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace loginNNN {
+namespace CanteenWebApplication {
     
     
     public partial class loggedin {

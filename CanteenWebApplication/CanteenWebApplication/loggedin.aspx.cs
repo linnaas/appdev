@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace loginNNN
+namespace CanteenWebApplication
 {
     public partial class loggedin : System.Web.UI.Page
     {

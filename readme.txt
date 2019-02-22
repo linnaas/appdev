@@ -19,4 +19,7 @@ Model skal ha likt eller samme navn som tabellen / tabellene den aksesser og fun
 Controller skal alle ha Controller på slutten av navnet. Så f.eks UserEditController / UserLogInController, og helst ta i bruk Model-navnet.
 View skal ha navn som korresponder mot en Controller, men uten å ende med Controller. Så f.eks 'UserEdit', 'UserLogIn' osv.
 
+5. Alle må jobbe innenfor CanteenWebApplication-prosjekt mappen. Dette er grunnen til at vi bruker MVC-prinsippet.
+
+
 

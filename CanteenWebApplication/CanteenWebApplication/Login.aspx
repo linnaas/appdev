@@ -9,7 +9,7 @@
     <style>
        
         #mainArea{
-            position: relative;
+            position: relative;nnnnnn
             padding: 10px;
             background-color: grey;
             width: 200px;

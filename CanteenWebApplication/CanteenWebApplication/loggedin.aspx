@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loggedin.aspx.cs" Inherits="loginNNN.loggedin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loggedin.aspx.cs" Inherits="CanteenWebApplication.loggedin" %>
 
 <!DOCTYPE html>
 

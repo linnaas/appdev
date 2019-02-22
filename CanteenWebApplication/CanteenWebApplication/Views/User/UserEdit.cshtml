@@ -1,4 +1,5 @@
-﻿@model CanteenWebApplication.Models.Account
+﻿
+@*@model CanteenWebApplication.Models.User*@
 @Scripts.Render("~/bundles/jquery")
 @Styles.Render("~/Content/css")
 
@@ -40,26 +41,26 @@
             <p><b>New last name</b></p>
             <input type="text" name="LastName" asp-for="LastName" id="LastName" /> <br /> <br />
             <p><b>Password confirmation</b></p>
-            <input type="text" name="PasswordConf" asp-for="PasswordConf" id="PasswordConf" /> <br /> <br />
+            <input type="text" name="PasswordConf" asp-for="PasswordConf" id="PasswordConf" OnClick="EditProfileButton_Click" /> <br /> <br />
             <input type="submit" value="Submit" />
         </form>
     </div>
 </div>
 
 @*<div id="myModal1" class="modal">
-    <div class="modal-content">
-        <h3>Change username</h3>
-        <p>This change requires password</p>
-        <form method="POST" asp-action="Profile" asp-controller="Form">
-            <span class="close">&times</span>
-            <p><b>New username</b></p>
-            <input type="text" name="Username" asp-for="Username" id="Username" /> <br /> <br />
-            <p><b>Password confirmation</b></p>
-            <input type="text" name="PasswordConf" asp-for="PasswordConf" id="PasswordConf" /> <br /> <br />
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
-</div>*@
+        <div class="modal-content">
+            <h3>Change username</h3>
+            <p>This change requires password</p>
+            <form method="POST" asp-action="Profile" asp-controller="Form">
+                <span class="close">&times</span>
+                <p><b>New username</b></p>
+                <input type="text" name="Username" asp-for="Username" id="Username" /> <br /> <br />
+                <p><b>Password confirmation</b></p>
+                <input type="text" name="PasswordConf" asp-for="PasswordConf" id="PasswordConf" /> <br /> <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>*@
 
 <div id="myModal2" class="modal">
     <div class="modal-content">

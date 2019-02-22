@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CanteenWebApplication.Models;
+using CanteenWebApplication;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
 
 
 namespace CanteenWebApplication.Controllers
 {
-    public class AccountController : Controller
+    public class UserController : Controller
     {
         private bool validInput = true;
 
@@ -18,7 +18,7 @@ namespace CanteenWebApplication.Controllers
         [HttpGet]
         public ActionResult Profile()
         {
-            var account = new Account() { tempUsername = "jola", tempFirstName = "John", tempLastName = "Larsen", tempPassword = "12356zxz", tempEmail = "test@email.com", tempPhoneNumber = "91728536" };
+            var account = new User() { tempUsername = "jola", tempFirstName = "John", tempLastName = "Larsen", tempPassword = "12356zxz", tempEmail = "test@email.com", tempPhoneNumber = "91728536" };
 
             return View(account); 
         }

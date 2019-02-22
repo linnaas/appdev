@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 
 
-namespace loginNNN
+namespace CanteenWebApplication
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -24,7 +24,7 @@ namespace loginNNN
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            string ConnectionS = "Server=remotemysql.com;Database=FgzHi9GyXc;Uid=FgzHi9GyXc;Pwd=c7V92jzX5b;";
+            string ConnectionS = "Server=localhost;Database=CanteenWebApplication;Uid=root;Pwd=12345;";
             using (MySqlConnection con = new MySqlConnection(ConnectionS))
             {
                 con.Open();
