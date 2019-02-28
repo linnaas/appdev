@@ -27,7 +27,7 @@ namespace CanteenWebApplication.Controllers
         [HttpPost]
         public ActionResult UserProfile(user_list user, string submit)
         {
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
+            var userSession = "jola"; // Session["usernameS"] as List<user_list>;n jlj 
             
             if (submit == "Save new password")
             {
