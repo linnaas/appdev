@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CanteenModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.canteendatabase.administrator' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="administrator">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="food_id" Type="smallint" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.canteendatabase.employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="salary" />
+            <PropertyRef Name="job_title" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="salary" Type="int" Nullable="false" />
+          <Property Name="job_title" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="favorite_list">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="food_id" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="food_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="food_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="enabled" Type="bool" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="image_id" Type="smallint" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.canteendatabase.food_availability' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="food_availability">
+          <Key>
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="food_id" Type="smallint" Nullable="false" />
+          <Property Name="from_date" Type="date" />
+          <Property Name="to_date" Type="date" />
+          <Property Name="monday" Type="bool" />
+          <Property Name="tuesday" Type="bool" />
+          <Property Name="wednesday" Type="bool" />
+          <Property Name="thursday" Type="bool" />
+          <Property Name="friday" Type="bool" />
+          <Property Name="saturday" Type="bool" />
+          <Property Name="sunday" Type="bool" />
+        </EntityType>
+        <EntityType Name="image">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="file" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="image_name" Type="varchar" MaxLength="30" />
+          <Property Name="caption" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="order_detail">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="order_id" Type="smallint" Nullable="false" />
+          <Property Name="food_id" Type="smallint" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="order_list">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="order_date" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="delivered" Type="bool" />
+        </EntityType>
+        <EntityType Name="user_list">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="administrator_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="administrator" Type="Self.administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="administrator">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="category_ibfk_1">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="category" Type="Self.category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="category">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="employee_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="favorite_list_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="favorite_list" Type="Self.favorite_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="favorite_list">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="favorite_list_ibfk_2">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="favorite_list" Type="Self.favorite_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="favorite_list">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="food_availability_ibfk_1">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="food_availability" Type="Self.food_availability" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="food_availability">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="food_ibfk_1">
+          <End Role="image" Type="Self.image" Multiplicity="0..1" />
+          <End Role="food" Type="Self.food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="image">
+              <PropertyRef Name="image_id" />
+            </Principal>
+            <Dependent Role="food">
+              <PropertyRef Name="image_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_detail_ibfk_1">
+          <End Role="order_list" Type="Self.order_list" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_list">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_detail_ibfk_2">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_list_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="order_list" Type="Self.order_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="order_list">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CanteenModelStoreContainer">
+          <EntitySet Name="category" EntityType="Self.category" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="favorite_list" EntityType="Self.favorite_list" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="food" EntityType="Self.food" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="image" EntityType="Self.image" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="order_detail" EntityType="Self.order_detail" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="order_list" EntityType="Self.order_list" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="user_list" EntityType="Self.user_list" Schema="canteendatabase" store:Type="Tables" />
+          <EntitySet Name="administrator" EntityType="Self.administrator" store:Type="Tables" store:Schema="canteendatabase">
+            <DefiningQuery>SELECT
+`administrator`.`username`
+FROM `administrator` AS `administrator`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="employee" EntityType="Self.employee" store:Type="Tables" store:Schema="canteendatabase">
+            <DefiningQuery>SELECT
+`employee`.`username`, 
+`employee`.`salary`, 
+`employee`.`job_title`
+FROM `employee` AS `employee`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="food_availability" EntityType="Self.food_availability" store:Type="Tables" store:Schema="canteendatabase">
+            <DefiningQuery>SELECT
+`food_availability`.`food_id`, 
+`food_availability`.`from_date`, 
+`food_availability`.`to_date`, 
+`food_availability`.`monday`, 
+`food_availability`.`tuesday`, 
+`food_availability`.`wednesday`, 
+`food_availability`.`thursday`, 
+`food_availability`.`friday`, 
+`food_availability`.`saturday`, 
+`food_availability`.`sunday`
+FROM `food_availability` AS `food_availability`</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="administrator_ibfk_1" Association="Self.administrator_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="administrator" EntitySet="administrator" />
+          </AssociationSet>
+          <AssociationSet Name="category_ibfk_1" Association="Self.category_ibfk_1">
+            <End Role="food" EntitySet="food" />
+            <End Role="category" EntitySet="category" />
+          </AssociationSet>
+          <AssociationSet Name="employee_ibfk_1" Association="Self.employee_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="favorite_list_ibfk_1" Association="Self.favorite_list_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="favorite_list" EntitySet="favorite_list" />
+          </AssociationSet>
+          <AssociationSet Name="favorite_list_ibfk_2" Association="Self.favorite_list_ibfk_2">
+            <End Role="food" EntitySet="food" />
+            <End Role="favorite_list" EntitySet="favorite_list" />
+          </AssociationSet>
+          <AssociationSet Name="food_availability_ibfk_1" Association="Self.food_availability_ibfk_1">
+            <End Role="food" EntitySet="food" />
+            <End Role="food_availability" EntitySet="food_availability" />
+          </AssociationSet>
+          <AssociationSet Name="food_ibfk_1" Association="Self.food_ibfk_1">
+            <End Role="image" EntitySet="image" />
+            <End Role="food" EntitySet="food" />
+          </AssociationSet>
+          <AssociationSet Name="order_detail_ibfk_1" Association="Self.order_detail_ibfk_1">
+            <End Role="order_list" EntitySet="order_list" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="order_detail_ibfk_2" Association="Self.order_detail_ibfk_2">
+            <End Role="food" EntitySet="food" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="order_list_ibfk_1" Association="Self.order_list_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="order_list" EntitySet="order_list" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CanteenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="food_id" Type="Int16" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="food" Relationship="Self.category_ibfk_1" FromRole="category" ToRole="food" />
+        </EntityType>
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="food_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="food_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enabled" Type="Boolean" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="image_id" Type="Int16" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="categories" Relationship="Self.category_ibfk_1" FromRole="food" ToRole="category" />
+          <NavigationProperty Name="food_availability" Relationship="Self.food_availability_ibfk_1" FromRole="food" ToRole="food_availability" />
+          <NavigationProperty Name="image" Relationship="Self.food_ibfk_1" FromRole="food" ToRole="image" />
+          <NavigationProperty Name="order_detail" Relationship="Self.order_detail_ibfk_2" FromRole="food" ToRole="order_detail" />
+          <NavigationProperty Name="user_list" Relationship="Self.favorite_list" FromRole="food" ToRole="user_list" />
+        </EntityType>
+        <EntityType Name="image">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="file" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="caption" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="foods" Relationship="Self.food_ibfk_1" FromRole="image" ToRole="food" />
+        </EntityType>
+        <EntityType Name="order_detail">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="order_id" Type="Int16" Nullable="false" />
+          <Property Name="food_id" Type="Int16" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="food" Relationship="Self.order_detail_ibfk_2" FromRole="order_detail" ToRole="food" />
+          <NavigationProperty Name="order_list" Relationship="Self.order_detail_ibfk_1" FromRole="order_detail" ToRole="order_list" />
+        </EntityType>
+        <EntityType Name="order_list">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="order_date" Type="DateTime" Nullable="false" />
+          <Property Name="delivered" Type="Boolean" />
+          <NavigationProperty Name="order_detail" Relationship="Self.order_detail_ibfk_1" FromRole="order_list" ToRole="order_detail" />
+          <NavigationProperty Name="user_list" Relationship="Self.order_list_ibfk_1" FromRole="order_list" ToRole="user_list" />
+        </EntityType>
+        <EntityType Name="user_list">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="order_list" Relationship="Self.order_list_ibfk_1" FromRole="user_list" ToRole="order_list" />
+          <NavigationProperty Name="administrator" Relationship="Self.administrator_ibfk_1" FromRole="user_list" ToRole="administrator" />
+          <NavigationProperty Name="employees" Relationship="Self.employee_ibfk_1" FromRole="user_list" ToRole="employee" />
+          <NavigationProperty Name="foods" Relationship="Self.favorite_list" FromRole="user_list" ToRole="food" />
+        </EntityType>
+        <EntityType Name="administrator">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="user_list" Relationship="Self.administrator_ibfk_1" FromRole="administrator" ToRole="user_list" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="salary" />
+            <PropertyRef Name="job_title" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
+          <Property Name="job_title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="user_list" Relationship="Self.employee_ibfk_1" FromRole="employee" ToRole="user_list" />
+        </EntityType>
+        <EntityType Name="food_availability">
+          <Key>
+            <PropertyRef Name="food_id" />
+          </Key>
+          <Property Name="food_id" Type="Int16" Nullable="false" />
+          <Property Name="from_date" Type="DateTime" />
+          <Property Name="to_date" Type="DateTime" />
+          <Property Name="monday" Type="Boolean" />
+          <Property Name="tuesday" Type="Boolean" />
+          <Property Name="wednesday" Type="Boolean" />
+          <Property Name="thursday" Type="Boolean" />
+          <Property Name="friday" Type="Boolean" />
+          <Property Name="saturday" Type="Boolean" />
+          <Property Name="sunday" Type="Boolean" />
+          <NavigationProperty Name="food" Relationship="Self.food_availability_ibfk_1" FromRole="food_availability" ToRole="food" />
+        </EntityType>
+        <Association Name="category_ibfk_1">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="category" Type="Self.category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="category">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="food_availability_ibfk_1">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="food_availability" Type="Self.food_availability" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="food_availability">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="food_ibfk_1">
+          <End Role="image" Type="Self.image" Multiplicity="0..1" />
+          <End Role="food" Type="Self.food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="image">
+              <PropertyRef Name="image_id" />
+            </Principal>
+            <Dependent Role="food">
+              <PropertyRef Name="image_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_detail_ibfk_2">
+          <End Role="food" Type="Self.food" Multiplicity="1" />
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food">
+              <PropertyRef Name="food_id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="food_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_detail_ibfk_1">
+          <End Role="order_list" Type="Self.order_list" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="order_detail" Type="Self.order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_list">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="order_detail">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_list_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="order_list" Type="Self.order_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="order_list">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="administrator_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="administrator" Type="Self.administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="administrator">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="employee_ibfk_1">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_list">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="favorite_list">
+          <End Role="user_list" Type="Self.user_list" Multiplicity="*" />
+          <End Role="food" Type="Self.food" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="CanteenDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="foods" EntityType="Self.food" />
+          <EntitySet Name="images" EntityType="Self.image" />
+          <EntitySet Name="order_detail" EntityType="Self.order_detail" />
+          <EntitySet Name="order_list" EntityType="Self.order_list" />
+          <EntitySet Name="user_list" EntityType="Self.user_list" />
+          <EntitySet Name="administrators" EntityType="Self.administrator" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="food_availability" EntityType="Self.food_availability" />
+          <AssociationSet Name="category_ibfk_1" Association="Self.category_ibfk_1">
+            <End Role="food" EntitySet="foods" />
+            <End Role="category" EntitySet="categories" />
+          </AssociationSet>
+          <AssociationSet Name="food_availability_ibfk_1" Association="Self.food_availability_ibfk_1">
+            <End Role="food" EntitySet="foods" />
+            <End Role="food_availability" EntitySet="food_availability" />
+          </AssociationSet>
+          <AssociationSet Name="food_ibfk_1" Association="Self.food_ibfk_1">
+            <End Role="image" EntitySet="images" />
+            <End Role="food" EntitySet="foods" />
+          </AssociationSet>
+          <AssociationSet Name="order_detail_ibfk_2" Association="Self.order_detail_ibfk_2">
+            <End Role="food" EntitySet="foods" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="order_detail_ibfk_1" Association="Self.order_detail_ibfk_1">
+            <End Role="order_list" EntitySet="order_list" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="order_list_ibfk_1" Association="Self.order_list_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="order_list" EntitySet="order_list" />
+          </AssociationSet>
+          <AssociationSet Name="administrator_ibfk_1" Association="Self.administrator_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="administrator" EntitySet="administrators" />
+          </AssociationSet>
+          <AssociationSet Name="employee_ibfk_1" Association="Self.employee_ibfk_1">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+          <AssociationSet Name="favorite_list" Association="Self.favorite_list">
+            <End Role="user_list" EntitySet="user_list" />
+            <End Role="food" EntitySet="foods" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CanteenModelStoreContainer" CdmEntityContainer="CanteenDatabaseEntities">
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="CanteenModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="foods">
+            <EntityTypeMapping TypeName="CanteenModel.food">
+              <MappingFragment StoreEntitySet="food">
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+                <ScalarProperty Name="food_name" ColumnName="food_name" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="images">
+            <EntityTypeMapping TypeName="CanteenModel.image">
+              <MappingFragment StoreEntitySet="image">
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="file" ColumnName="file" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order_detail">
+            <EntityTypeMapping TypeName="CanteenModel.order_detail">
+              <MappingFragment StoreEntitySet="order_detail">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order_list">
+            <EntityTypeMapping TypeName="CanteenModel.order_list">
+              <MappingFragment StoreEntitySet="order_list">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="delivered" ColumnName="delivered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_list">
+            <EntityTypeMapping TypeName="CanteenModel.user_list">
+              <MappingFragment StoreEntitySet="user_list">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="administrators">
+            <EntityTypeMapping TypeName="CanteenModel.administrator">
+              <MappingFragment StoreEntitySet="administrator">
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="CanteenModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="job_title" ColumnName="job_title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="food_availability">
+            <EntityTypeMapping TypeName="CanteenModel.food_availability">
+              <MappingFragment StoreEntitySet="food_availability">
+                <ScalarProperty Name="food_id" ColumnName="food_id" />
+                <ScalarProperty Name="from_date" ColumnName="from_date" />
+                <ScalarProperty Name="to_date" ColumnName="to_date" />
+                <ScalarProperty Name="monday" ColumnName="monday" />
+                <ScalarProperty Name="tuesday" ColumnName="tuesday" />
+                <ScalarProperty Name="wednesday" ColumnName="wednesday" />
+                <ScalarProperty Name="thursday" ColumnName="thursday" />
+                <ScalarProperty Name="friday" ColumnName="friday" />
+                <ScalarProperty Name="saturday" ColumnName="saturday" />
+                <ScalarProperty Name="sunday" ColumnName="sunday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="favorite_list" TypeName="CanteenModel.favorite_list" StoreEntitySet="favorite_list">
+            <EndProperty Name="user_list">
+              <ScalarProperty Name="username" ColumnName="username" />
+            </EndProperty>
+            <EndProperty Name="food">
+              <ScalarProperty Name="food_id" ColumnName="food_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

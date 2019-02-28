@@ -1,0 +1,125 @@
+﻿
+@model CanteenWebApplication.Models.user_list
+@Scripts.Render("~/bundles/jquery")
+@Styles.Render("~/Content/css")
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>My Profile</title>
+
+<h2>My profile</h2>
+
+<table style="width:33%" , border="1px">
+    <tr>
+        <td>Name </td>
+        <td>@Html.DisplayFor(model => model.first_name) @Html.DisplayFor(model => model.last_name) <button class="btn" type="button">Temp edit name</button></td> @*GJør ingenting?*@ 
+    </tr>
+    <td>Username </td>
+    <td>@Html.DisplayFor(model => model.username)</td>
+    <tr>
+        <td>Password </td>
+        <td> @Html.DisplayFor(model => model.password) <button class="btn" type="button">Temp edit password</button></td> @*implementer password-protection for passord-tekst*@
+    </tr>
+    <tr>
+        <td>Email adress </td>
+        <td>@Html.DisplayFor(model => model.email) <button class="btn" type="button">Temp edit email</button></td>
+    </tr>
+    <tr>
+        <td>Phone number </td>
+        <td>@Html.DisplayFor(model => model.phone) <button class="btn" type="button">Temp edit phone</button></td>
+    </tr>
+</table>
+
+<div id="myModal1" class="modal"> @* Hvorfor dukker ikke denne modalen opp? *@
+    <div class="modal-content">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <h3>Change password</h3>
+            <p>This change requires password</p>
+            <span class="close">&times</span>
+            <p><b>Your first name</b></p>
+            @Html.PasswordFor(model => model.first_name, new { id = "newFN" })
+            <br /> <br />
+            <p><b>Your last name</b></p>
+            @Html.PasswordFor(model => model.last_name, new { id = "newLN" })
+            <br /> <br />
+            <p><b>Your password</b></p>
+            @Html.PasswordFor(model => model.oldPassword, new { id = "oldPassword" })
+            <br /> <br />
+
+            <input type="submit" name="submit" id="submit2" value="Save new password" />
+        }
+    </div>
+</div>
+
+<div id="myModal2" class="modal">
+    <div class="modal-content">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <h3>Change password</h3>
+            <p>This change requires password</p>
+            <span class="close">&times</span>
+            <p><b>New password</b></p>
+            @Html.PasswordFor(model => model.newPassword, new { id = "newPassword" })
+            <br /> <br />
+            <p><b>Confirm new password</b></p>
+            @Html.PasswordFor(model => model.confirmPassword, new { id = "confirmPassword" })
+            <br /> <br />
+            <p><b>Your password</b></p>
+            @Html.PasswordFor(model => model.oldPassword, new { id = "oldPassword" })
+            <br /> <br />
+
+            <input type="submit" name="submit" id="submit2" value="Save new password" />
+        }
+    </div>
+</div>
+
+<div id="myModal3" class="modal">
+    <div class="modal-content">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <h3>Change email</h3>
+            <p>This change requires password</p>
+            <span class="close">&times</span>
+            <p><b>New email</b></p>
+            @Html.EditorFor(model => model.email, new { id = "newEmail" })
+            <br /> <br />
+            <p><b>Your password</b></p>
+            @Html.PasswordFor(model => model.oldPassword, new { id = "oldPassword" })
+            <br /> <br />
+
+            <input type="submit" name="submit" id="submit3" value="Save new email" />
+        }
+    </div>
+</div>
+
+<div id="myModal4" class="modal">
+    <div class="modal-content">
+        <h3>Change phonenumber</h3>
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <h3>Change phone number</h3>
+            <p>This change requires password</p>
+            <span class="close">&times</span>
+            <p><b>New number</b></p>
+            @Html.EditorFor(model => model.phone, new { id = "newNumber" })
+            <br /> <br />
+            <p><b>Your password</b></p>
+            @Html.PasswordFor(model => model.oldPassword, new { id = "oldPassword" })
+            <br /> <br />
+
+            <input type="submit" name="submit" id="submit3" value="Save new number" />
+        }
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Delete profile", "UserDelete")
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+
+@Scripts.Render("~/Scripts/JavaScript.js")
+@Styles.Render("~/Content/Site.css")

@@ -5,8 +5,8 @@
     "\\CanteenWebApplication\\Controllers",
     "\\CanteenWebApplication\\Models",
     "\\CanteenWebApplication\\Views",
-    "\\CanteenWebApplication\\Views\\Account"
+    "\\CanteenWebApplication\\Views\\User"
   ],
-  "SelectedNode": "\\CanteenWebApplication",
+  "SelectedNode": "\\CanteenWebApplication\\Views\\User\\UserProfile.cshtml",
   "PreviewInSolutionExplorer": false
 }

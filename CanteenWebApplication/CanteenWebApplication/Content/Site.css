@@ -23,6 +23,10 @@ textarea {
     max-width: 280px;
 }
 
+.hiddenPassword {
+    -webkit-text-security: disc;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
