@@ -27,7 +27,12 @@ namespace Admin___Edit_Delete_food
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"The food { newNameoffoodText.Text } has now been updated!")
+            MessageBox.Show($"The food { newNameoffoodText.Text } has now been updated!");
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The food { newNameoffoodText.Text } has now been updated!");
         }
     }
 }
