@@ -8,13 +8,13 @@
 }
 
 <title>My Profile</title>
-
 <h2>My profile</h2>
 
+@*Table underneath presents current usersession's information*@
 <table style="width:33%" , border="1px">
     <tr>
         <td>Name </td>
-        <td>@Html.DisplayFor(model => model.first_name) @Html.DisplayFor(model => model.last_name) <button class="btn" type="button">Temp edit name</button></td> @*GJør ingenting?*@ 
+        <td>@Html.DisplayFor(model => model.first_name) @Html.DisplayFor(model => model.last_name) <button class="btn" type="button">Temp edit name</button></td>
     </tr>
     <td>Username </td>
     <td>@Html.DisplayFor(model => model.username)</td>
@@ -32,11 +32,13 @@
     </tr>
 </table>
 
-<div id="myModal1" class="modal"> @* Hvorfor dukker ikke denne modalen opp? *@
+
+@*Ünderneath are the modals for each of the edit-buttons. Within the modals it's possible to input text, and confirm new information.*@
+<div id="myModal1" class="modal">
     <div class="modal-content">
         @using (Html.BeginForm(FormMethod.Post))
         {
-            <h3>Change password</h3>
+            <h3>Change name</h3>
             <p>This change requires password</p>
             <span class="close">&times</span>
             <p><b>Your first name</b></p>
@@ -97,7 +99,7 @@
 
 <div id="myModal4" class="modal">
     <div class="modal-content">
-        <h3>Change phonenumber</h3>
+        <h3>Change phone number</h3>
         @using (Html.BeginForm(FormMethod.Post))
         {
             <h3>Change phone number</h3>

@@ -10,7 +10,7 @@ namespace CanteenWebApplication.Controllers
     public class UserController : Controller
     {
 
-        // GET: User
+        // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
         public ActionResult UserProfile()
         {
             string tempUserSession = "jola";
@@ -23,13 +23,14 @@ namespace CanteenWebApplication.Controllers
             }
             
         }
-            
+        
+        // Based on which submit-button has been pressed in a modal, a specfic algorythm is launched and executed. user_list "user" carries new information, while userEdit carries old information.
         [HttpPost]
         public ActionResult UserProfile(user_list user, string submit)
         {
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;n jlj 
+            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
             
-            if (submit == "Save new password")
+            if (submit == "Save new password") // If the submit-button for saving password is pressed
             {
 
                 if (ModelState.IsValid)
@@ -85,8 +86,7 @@ namespace CanteenWebApplication.Controllers
                         return Content(test);
                     }
                 }
-
-
+                
             }
 
             if (submit == "Save new number")
