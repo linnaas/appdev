@@ -88,6 +88,7 @@ C:\Users\johnl\source\repos\CanteenWebApplication\CanteenWebApplication\obj\Debu
 C:\Users\johnl\source\repos\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.dll
 C:\Users\johnl\source\repos\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.pdb
 C:\Users\johnl\source\repos\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.dll.config
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.dll
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.pdb
@@ -178,3 +179,95 @@ C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplicati
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.csproj.CopyComplete
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.dll
 C:\Users\johnl\Documents\GitHub\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.pdb
+=======
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.dll.config
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\CanteenWebApplication.pdb
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csc.exe
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csc.exe.config
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csc.rsp
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csi.exe
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csi.exe.config
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\csi.rsp
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.AppContext.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Console.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.IO.Compression.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Claims.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.ValueTuple.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\vbc.exe
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\vbc.exe.config
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\vbc.rsp
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\VBCSCompiler.exe
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Antlr3.Runtime.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\EntityFramework.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Web.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Newtonsoft.Json.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Helpers.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Mvc.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Optimization.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Razor.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\WebGrease.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\EntityFramework.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\MySql.Web.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Helpers.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Mvc.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Optimization.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.Razor.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Newtonsoft.Json.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Antlr3.Runtime.pdb
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.csprojAssemblyReference.cache
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.csproj.CopyComplete
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.dll
+C:\Users\Bunsoy\Desktop\Final project\Github\appdev\CanteenWebApplication\CanteenWebApplication\obj\Debug\CanteenWebApplication.pdb
+>>>>>>> 94595c29967ca4401dbb2e26a8b6ac40f9cde281
