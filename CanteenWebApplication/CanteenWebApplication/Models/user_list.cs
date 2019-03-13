@@ -11,6 +11,7 @@ namespace CanteenWebApplication.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     public partial class user_list
@@ -22,14 +23,20 @@ namespace CanteenWebApplication.Models
             this.employees = new HashSet<employee>();
             this.foods = new HashSet<food>();
         }
-    
+
+        [DisplayName("Username")]
+        [Required(ErrorMessage = "This Field is Required!")]
         public string username { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
+        [DisplayName("Password")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "This Field is Required!")]
         public string password { get; set; }
 
+        public string LoginError{ get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = @"New Password")]

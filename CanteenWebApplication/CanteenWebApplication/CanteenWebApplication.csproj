@@ -151,6 +151,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MidlertidigController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -258,6 +260,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Midlertidig\Midlertidig.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
