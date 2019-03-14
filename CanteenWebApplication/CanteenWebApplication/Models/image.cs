@@ -17,7 +17,7 @@ namespace CanteenWebApplication.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public image()
         {
-            this.foods = new HashSet<food>();
+            this.food = new HashSet<food>();
         }
     
         public short image_id { get; set; }
@@ -26,6 +26,6 @@ namespace CanteenWebApplication.Models
         public string caption { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<food> foods { get; set; }
+        public virtual ICollection<food> food { get; set; }
     }
 }

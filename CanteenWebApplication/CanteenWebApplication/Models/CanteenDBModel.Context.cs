@@ -25,15 +25,14 @@ namespace CanteenWebApplication.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<category> Categories { get; set; }
-        public virtual DbSet<food> Foods { get; set; }
-        public virtual DbSet<image> Images { get; set; }
-        public virtual DbSet<order_detail> Order_details { get; set; }
-        public virtual DbSet<order_list> Orders { get; set; }
-        public virtual DbSet<user_list> Users { get; set; }
-        public virtual DbSet<administrator> Administrators { get; set; }
-        public virtual DbSet<employee> Employees { get; set; }
-        public virtual DbSet<food_availability> Food_availabilities { get; set; }
-        public virtual DbSet<EditProfilePassword> EditProfileModels { get; set; }
+        public virtual DbSet<category> category { get; set; }
+        public virtual DbSet<food> food { get; set; }
+        public virtual DbSet<image> image { get; set; }
+        public virtual DbSet<order_detail> order_detail { get; set; }
+        public virtual DbSet<order_list> order_list { get; set; }
+        public virtual DbSet<user_list> user_list { get; set; }
+        public virtual DbSet<administrator> administrator { get; set; }
+        public virtual DbSet<employee> employee { get; set; }
+        public virtual DbSet<food_availability> food_availability { get; set; }
     }
 }

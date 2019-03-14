@@ -10,7 +10,7 @@ namespace CanteenWebApplication.Controllers
     public class UserController : Controller
     {
 
-        // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
+         // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
         public ActionResult UserProfile()
         {
             string tempUserSession = "jola";
@@ -28,6 +28,11 @@ namespace CanteenWebApplication.Controllers
         [HttpPost]
         public ActionResult UserProfile(user_list user, string submit)
         {
+
+            private void ss(object sender, EventArgs e)
+            {
+
+            }
             var userSession = "jola"; // Session["usernameS"] as List<user_list>;
             
             if (submit == "Save new password") // If the submit-button for saving password is pressed
