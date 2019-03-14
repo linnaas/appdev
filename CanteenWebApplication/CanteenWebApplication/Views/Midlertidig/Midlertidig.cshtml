@@ -3,14 +3,12 @@
     ViewBag.Title = "Midlertidig";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    //kan sette denne koden i layout koden
+    //denne koden skal over på alle sidene som ikke normale brukere skal ha tilgang til
     if (Session["username"] == null)
     {
         Response.Redirect("~/Login/Login");
     }
 }
-
-
 
 <!DOCTYPE html>
 
