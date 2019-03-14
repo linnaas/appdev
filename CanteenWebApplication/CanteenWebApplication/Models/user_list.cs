@@ -11,7 +11,9 @@ namespace CanteenWebApplication.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class user_list
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,6 +27,9 @@ namespace CanteenWebApplication.Models
         [DisplayName("Username")]
         [Required(ErrorMessage = "This Field is Required!")]
         public string username { get; set; }
+        [DisplayName("Password")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "This Field is Required!")]
         public string password { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
@@ -34,6 +39,8 @@ namespace CanteenWebApplication.Models
         public string oldPassword { get; set; }
         public string newPassword { get; set; }
         public string confirmPassword { get; set; }
+
+        public string LoginError { get; set; }
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
