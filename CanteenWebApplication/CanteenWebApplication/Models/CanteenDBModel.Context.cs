@@ -30,7 +30,7 @@ namespace CanteenWebApplication.Models
         public virtual DbSet<image> image { get; set; }
         public virtual DbSet<order_detail> order_detail { get; set; }
         public virtual DbSet<order_list> order_list { get; set; }
-        public virtual DbSet<user_list> user_list { get; set; }
+        public virtual DbSet<user_list> Users { get; set; }
         public virtual DbSet<administrator> administrator { get; set; }
         public virtual DbSet<employee> employee { get; set; }
         public virtual DbSet<food_availability> food_availability { get; set; }

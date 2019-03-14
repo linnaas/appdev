@@ -29,10 +29,6 @@ namespace CanteenWebApplication.Controllers
         public ActionResult UserProfile(user_list user, string submit)
         {
 
-            private void ss(object sender, EventArgs e)
-            {
-
-            }
             var userSession = "jola"; // Session["usernameS"] as List<user_list>;
             
             if (submit == "Save new password") // If the submit-button for saving password is pressed

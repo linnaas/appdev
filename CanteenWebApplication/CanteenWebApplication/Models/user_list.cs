@@ -28,7 +28,12 @@ namespace CanteenWebApplication.Models
         public string last_name { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-    
+
+        public string oldPassword { get; set; }
+        public string newPassword { get; set; }
+        public string confirmPassword { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order_list> order_list { get; set; }
         public virtual administrator administrator { get; set; }
