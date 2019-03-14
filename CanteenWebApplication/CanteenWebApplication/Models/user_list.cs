@@ -21,7 +21,9 @@ namespace CanteenWebApplication.Models
             this.employee = new HashSet<employee>();
             this.food = new HashSet<food>();
         }
-    
+
+        [DisplayName("Username")]
+        [Required(ErrorMessage = "This Field is Required!")]
         public string username { get; set; }
         public string password { get; set; }
         public string first_name { get; set; }
