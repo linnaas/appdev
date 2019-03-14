@@ -17,7 +17,7 @@ namespace CanteenWebApplication.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public food()
         {
-            this.categories = new HashSet<category>();
+            this.category = new HashSet<category>();
             this.order_detail = new HashSet<order_detail>();
             this.user_list = new HashSet<user_list>();
         }
@@ -30,7 +30,7 @@ namespace CanteenWebApplication.Models
         public string description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<category> categories { get; set; }
+        public virtual ICollection<category> category { get; set; }
         public virtual food_availability food_availability { get; set; }
         public virtual image image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
