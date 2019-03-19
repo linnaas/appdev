@@ -43,6 +43,7 @@
             />
 
 
+        
         <TextBox
             x:Name="searchBoxText"
             Grid.Column="1"
@@ -59,9 +60,12 @@
             Grid.ColumnSpan="1"
             Margin="10,5"
             Width="150"
+            Background="#9e9e9e"
             
             />
 
+        
+        
         <TextBlock
             Text="Name of food"
             Grid.Column="1"
@@ -87,6 +91,7 @@
             Margin="10,5"
             Width="150"
             Click="SaveButton_Click"
+            Background="#9e9e9e"
             />
 
         <Button
@@ -98,9 +103,12 @@
             Margin="10,5"
             Width="150" 
             Click="DeleteButton_Click"
+            Background="#9e9e9e"
             />
 
 
+        
+        
         <TextBlock
             Text="Name of food1"
             Grid.Column="1"
@@ -126,6 +134,7 @@
             Margin="10,5"
             Width="150"
             Click="SaveButton1_Click"
+            Background="#9e9e9e"
             />
 
         <Button
@@ -137,14 +146,22 @@
             Margin="10,5"
             Width="150" 
             Click="DeleteButton1_Click"
+            Background="#9e9e9e"
+            
             />
 
+        
+        
+        
         <ListBox
+            x:Name="ListBox"
             Grid.Column="1"
             Grid.Row="5"
+            
             />
 
-
+        
+        
 
 
 
