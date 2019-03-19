@@ -25,14 +25,27 @@ namespace Admin___Edit_Delete_food
             InitializeComponent();
         }
 
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"The food { newNameoffoodText.Text } has now been updated!");
         }
 
+
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"The food { newNameoffoodText.Text } has now been updated!");
+            MessageBox.Show($"The food has now been deleted!");
+        }
+
+
+        private void SaveButton1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The food {newNameoffoodText1.Text} has now been updated!");
+        }
+
+        private void DeleteButton1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The food has now been deleted!");
         }
     }
 }
