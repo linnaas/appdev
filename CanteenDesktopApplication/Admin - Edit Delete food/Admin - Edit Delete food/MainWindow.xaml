@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Admin___Edit_Delete_food"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="1200">
     <Grid>
 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
@@ -104,10 +107,26 @@
             Margin="10,5"
             />
 
+        <TextBox
+            x:Name="newPriceoffoodText"
+            Grid.Column="3"
+            Grid.Row="4"
+            Width="150"
+            Margin="10,5"
+            />
+
+        <TextBox
+            x:Name="newDescriptionoffoodText"
+            Grid.Column="4"
+            Grid.Row="4"
+            Width="150"
+            Margin="10,5"
+            />
+
         <Button
             x:Name="saveButton"
             Content="Save"
-            Grid.Column="3"
+            Grid.Column="5"
             Grid.Row="4"
             Grid.ColumnSpan="1"
             Margin="10,5"
@@ -119,7 +138,7 @@
         <Button
             x:Name="deleteButton"
             Content="Deleted"
-            Grid.Column="4"
+            Grid.Column="6"
             Grid.Row="4"
             Grid.ColumnSpan="1"
             Margin="10,5"
@@ -150,10 +169,26 @@
             Margin="10,5"
             />
 
+        <TextBox
+            x:Name="newPriceoffoodText1"
+            Grid.Column="3"
+            Grid.Row="5"
+            Width="150"
+            Margin="10,5"
+            />
+
+        <TextBox
+            x:Name="newDescriptionoffoodText1"
+            Grid.Column="4"
+            Grid.Row="5"
+            Width="150"
+            Margin="10,5"
+            />
+
         <Button
             x:Name="saveButton1"
             Content="Save"
-            Grid.Column="3"
+            Grid.Column="5"
             Grid.Row="5"
             Grid.ColumnSpan="1"
             Margin="10,5"
@@ -165,14 +200,13 @@
         <Button
             x:Name="deleteButton1"
             Content="Deleted"
-            Grid.Column="4"
+            Grid.Column="6"
             Grid.Row="5"
             Grid.ColumnSpan="1"
             Margin="10,5"
             Width="150" 
             Click="DeleteButton1_Click"
             Background="#9e9e9e"
-            
             />
 
         
