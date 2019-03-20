@@ -23,6 +23,9 @@
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
 
+        
+        
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
@@ -43,7 +46,7 @@
         
         
         <TextBlock
-            Text="Edit food"
+            Text="Edit/delete food"
             Grid.Column="1"
             Grid.Row="1"
             FontSize="35"
@@ -72,7 +75,6 @@
             Margin="10,5"
             Width="150"
             Background="#9e9e9e"
-            
             />
 
 
@@ -210,14 +212,6 @@
             />
 
         
-        
-
-        
-
-
-        
-        
-
 
 
     </Grid>
