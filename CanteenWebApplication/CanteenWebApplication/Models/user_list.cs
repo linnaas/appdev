@@ -36,6 +36,8 @@ namespace CanteenWebApplication.Models
         public string email { get; set; }
         public string phone { get; set; }
 
+        public string LoginErrorMessage { get; set; }
+
         public string oldPassword { get; set; }
         public string newPassword { get; set; }
         public string confirmPassword { get; set; }

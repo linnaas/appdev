@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CanteenModelStoreContainer" CdmEntityContainer="CanteenDatabaseEntities">
-    <EntitySetMapping Name="categories">
-      <EntityTypeMapping TypeName="CanteenModel.category">
+  <EntityContainerMapping StorageEntityContainer="CanteenDBContexdtStoreContainer" CdmEntityContainer="CanteenDBContext">
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.category">
         <MappingFragment StoreEntitySet="category">
           <ScalarProperty Name="category_id" ColumnName="category_id" />
           <ScalarProperty Name="category_name" ColumnName="category_name" />
@@ -11,8 +11,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="foods">
-      <EntityTypeMapping TypeName="CanteenModel.food">
+    <EntitySetMapping Name="food">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.food">
         <MappingFragment StoreEntitySet="food">
           <ScalarProperty Name="food_id" ColumnName="food_id" />
           <ScalarProperty Name="food_name" ColumnName="food_name" />
@@ -23,8 +23,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="images">
-      <EntityTypeMapping TypeName="CanteenModel.image">
+    <EntitySetMapping Name="image">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.image">
         <MappingFragment StoreEntitySet="image">
           <ScalarProperty Name="image_id" ColumnName="image_id" />
           <ScalarProperty Name="file" ColumnName="file" />
@@ -34,7 +34,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="order_detail">
-      <EntityTypeMapping TypeName="CanteenModel.order_detail">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.order_detail">
         <MappingFragment StoreEntitySet="order_detail">
           <ScalarProperty Name="order_id" ColumnName="order_id" />
           <ScalarProperty Name="food_id" ColumnName="food_id" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="order_list">
-      <EntityTypeMapping TypeName="CanteenModel.order_list">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.order_list">
         <MappingFragment StoreEntitySet="order_list">
           <ScalarProperty Name="order_id" ColumnName="order_id" />
           <ScalarProperty Name="username" ColumnName="username" />
@@ -54,7 +54,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="user_list">
-      <EntityTypeMapping TypeName="CanteenModel.user_list">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.user_list">
         <MappingFragment StoreEntitySet="user_list">
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
@@ -65,15 +65,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="administrators">
-      <EntityTypeMapping TypeName="CanteenModel.administrator">
+    <EntitySetMapping Name="administrator">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.administrator">
         <MappingFragment StoreEntitySet="administrator">
           <ScalarProperty Name="username" ColumnName="username" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="employees">
-      <EntityTypeMapping TypeName="CanteenModel.employee">
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.employee">
         <MappingFragment StoreEntitySet="employee">
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="salary" ColumnName="salary" />
@@ -82,7 +82,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="food_availability">
-      <EntityTypeMapping TypeName="CanteenModel.food_availability">
+      <EntityTypeMapping TypeName="CanteenDBContexdt.food_availability">
         <MappingFragment StoreEntitySet="food_availability">
           <ScalarProperty Name="food_id" ColumnName="food_id" />
           <ScalarProperty Name="from_date" ColumnName="from_date" />
@@ -97,7 +97,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="favorite_list" TypeName="CanteenModel.favorite_list" StoreEntitySet="favorite_list">
+    <AssociationSetMapping Name="favorite_list" TypeName="CanteenDBContexdt.favorite_list" StoreEntitySet="favorite_list">
       <EndProperty Name="user_list">
         <ScalarProperty Name="username" ColumnName="username" />
       </EndProperty>

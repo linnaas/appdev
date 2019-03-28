@@ -10,13 +10,16 @@ namespace CanteenWebApplication.Controllers
     public class UserController : Controller
     {
 
-         // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
+
+
+        // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
         public ActionResult UserProfile()
         {
-            string tempUserSession = "jola";
+            var UserSession = Session["username"] ;
+
             using (var context = new CanteenDBContext())
             {
-                var userInfo = context.Users.Where(u => u.username == tempUserSession).FirstOrDefault<user_list>();
+                var userInfo = context.Users.Where(u => u.username == UserSession).FirstOrDefault<user_list>();
 
                 return View(userInfo);
                 

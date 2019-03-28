@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CanteenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="CanteenDBContexdt" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="category">
     <Key>
       <PropertyRef Name="category_id" />
@@ -20,7 +20,7 @@
     <Property Name="price" Type="Int32" Nullable="false" />
     <Property Name="image_id" Type="Int16" />
     <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="categories" Relationship="Self.category_ibfk_1" FromRole="food" ToRole="category" />
+    <NavigationProperty Name="category" Relationship="Self.category_ibfk_1" FromRole="food" ToRole="category" />
     <NavigationProperty Name="food_availability" Relationship="Self.food_availability_ibfk_1" FromRole="food" ToRole="food_availability" />
     <NavigationProperty Name="image" Relationship="Self.food_ibfk_1" FromRole="food" ToRole="image" />
     <NavigationProperty Name="order_detail" Relationship="Self.order_detail_ibfk_2" FromRole="food" ToRole="order_detail" />
@@ -34,7 +34,7 @@
     <Property Name="file" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="image_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="caption" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="foods" Relationship="Self.food_ibfk_1" FromRole="image" ToRole="food" />
+    <NavigationProperty Name="food" Relationship="Self.food_ibfk_1" FromRole="image" ToRole="food" />
   </EntityType>
   <EntityType Name="order_detail">
     <Key>
@@ -71,8 +71,8 @@
     <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="order_list" Relationship="Self.order_list_ibfk_1" FromRole="user_list" ToRole="order_list" />
     <NavigationProperty Name="administrator" Relationship="Self.administrator_ibfk_1" FromRole="user_list" ToRole="administrator" />
-    <NavigationProperty Name="employees" Relationship="Self.employee_ibfk_1" FromRole="user_list" ToRole="employee" />
-    <NavigationProperty Name="foods" Relationship="Self.favorite_list" FromRole="user_list" ToRole="food" />
+    <NavigationProperty Name="employee" Relationship="Self.employee_ibfk_1" FromRole="user_list" ToRole="employee" />
+    <NavigationProperty Name="food" Relationship="Self.favorite_list" FromRole="user_list" ToRole="food" />
   </EntityType>
   <EntityType Name="administrator">
     <Key>
@@ -210,30 +210,30 @@
     <End Role="user_list" Type="Self.user_list" Multiplicity="*" />
     <End Role="food" Type="Self.food" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="CanteenDatabaseEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="categories" EntityType="Self.category" />
-    <EntitySet Name="foods" EntityType="Self.food" />
-    <EntitySet Name="images" EntityType="Self.image" />
+  <EntityContainer Name="CanteenDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="category" EntityType="Self.category" />
+    <EntitySet Name="food" EntityType="Self.food" />
+    <EntitySet Name="image" EntityType="Self.image" />
     <EntitySet Name="order_detail" EntityType="Self.order_detail" />
     <EntitySet Name="order_list" EntityType="Self.order_list" />
     <EntitySet Name="user_list" EntityType="Self.user_list" />
-    <EntitySet Name="administrators" EntityType="Self.administrator" />
-    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="administrator" EntityType="Self.administrator" />
+    <EntitySet Name="employee" EntityType="Self.employee" />
     <EntitySet Name="food_availability" EntityType="Self.food_availability" />
     <AssociationSet Name="category_ibfk_1" Association="Self.category_ibfk_1">
-      <End Role="food" EntitySet="foods" />
-      <End Role="category" EntitySet="categories" />
+      <End Role="food" EntitySet="food" />
+      <End Role="category" EntitySet="category" />
     </AssociationSet>
     <AssociationSet Name="food_availability_ibfk_1" Association="Self.food_availability_ibfk_1">
-      <End Role="food" EntitySet="foods" />
+      <End Role="food" EntitySet="food" />
       <End Role="food_availability" EntitySet="food_availability" />
     </AssociationSet>
     <AssociationSet Name="food_ibfk_1" Association="Self.food_ibfk_1">
-      <End Role="image" EntitySet="images" />
-      <End Role="food" EntitySet="foods" />
+      <End Role="image" EntitySet="image" />
+      <End Role="food" EntitySet="food" />
     </AssociationSet>
     <AssociationSet Name="order_detail_ibfk_2" Association="Self.order_detail_ibfk_2">
-      <End Role="food" EntitySet="foods" />
+      <End Role="food" EntitySet="food" />
       <End Role="order_detail" EntitySet="order_detail" />
     </AssociationSet>
     <AssociationSet Name="order_detail_ibfk_1" Association="Self.order_detail_ibfk_1">
@@ -246,15 +246,15 @@
     </AssociationSet>
     <AssociationSet Name="administrator_ibfk_1" Association="Self.administrator_ibfk_1">
       <End Role="user_list" EntitySet="user_list" />
-      <End Role="administrator" EntitySet="administrators" />
+      <End Role="administrator" EntitySet="administrator" />
     </AssociationSet>
     <AssociationSet Name="employee_ibfk_1" Association="Self.employee_ibfk_1">
       <End Role="user_list" EntitySet="user_list" />
-      <End Role="employee" EntitySet="employees" />
+      <End Role="employee" EntitySet="employee" />
     </AssociationSet>
     <AssociationSet Name="favorite_list" Association="Self.favorite_list">
       <End Role="user_list" EntitySet="user_list" />
-      <End Role="food" EntitySet="foods" />
+      <End Role="food" EntitySet="food" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

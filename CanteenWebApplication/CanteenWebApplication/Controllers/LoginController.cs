@@ -16,15 +16,15 @@ namespace CanteenWebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult LoginAction(CanteenWebApplication.Models.user_list users)
+        public ActionResult Autorize(CanteenWebApplication.Models.user_list userModel)
         {
-            using (CanteenDBContext database = new CanteenDBContext())
+            using (CanteenDBContext db = new CanteenDBContext())
             {
-                var userDetails = database.Users.Where(x => x.username == users.username && x.password == users.password).FirstOrDefault();
+                var userDetails = db.Users.Where(x => x.username == userModel.username && x.password == userModel.password).FirstOrDefault();
                 if (userDetails == null)
                 {
-                    users.LoginError = "The username or password is incorrect";
-                    return View("Login", users);
+                    userModel.LoginErrorMessage = "The username or password is incorrect";
+                    return View("Login", userModel);
                 }
                 else
                 {
@@ -43,5 +43,6 @@ namespace CanteenWebApplication.Controllers
         }
     }
 }
+
 
 
