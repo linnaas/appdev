@@ -20,8 +20,6 @@ namespace Admin___Edit_Delete_food
     /// </summary>
     public partial class MainWindow : Window
     {
-        private object NavigationService;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -48,12 +46,6 @@ namespace Admin___Edit_Delete_food
         private void DeleteButton1_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"The food has now been deleted!");
-        }
-
-        private void Page1_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("Page1.xaml , UriKind.Relative");
-            this.NavigationService.Navigate(uri);
         }
     }
 }
