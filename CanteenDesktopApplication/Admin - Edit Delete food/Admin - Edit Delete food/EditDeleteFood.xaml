@@ -212,17 +212,6 @@
             />
 
         
-        
-        <Button
-            x:Name="Page1"
-            Content="Page1"
-            Grid.Column="5"
-            Grid.Row="2"
-            Grid.ColumnSpan="1"
-            Margin="10,5"
-            Width="150"
-            Background="#9e9e9e" Click="Page1_Click"
-            />
 
 
     </Grid>
