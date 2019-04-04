@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:Admin___Edit_Delete_food"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1200">
+
+    
+    
+    
+    
+    
     <Grid>
 
 
@@ -211,18 +217,19 @@
             Background="#9e9e9e"
             />
 
-        
-        
+
         <Button
             x:Name="Page1"
             Content="Page1"
-            Grid.Column="5"
+            Grid.Column="3"
             Grid.Row="2"
             Grid.ColumnSpan="1"
             Margin="10,5"
-            Width="150"
-            Background="#9e9e9e" Click="Page1_Click"
+            Width="150" 
+            Background="#9e9e9e" 
+            Click="Page1_Click"
             />
+       
 
     </Grid>
 </Window>
