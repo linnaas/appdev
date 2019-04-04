@@ -32,8 +32,8 @@ namespace CanteenWebApplication.Controllers
         public ActionResult UserProfile(user_list user, string submit)
         {
 
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
-            
+            var UserSession = Session["username"];
+
             if (submit == "Save new password") // If the submit-button for saving password is pressed
             {
 
@@ -41,7 +41,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
                     
                         if (user.oldPassword == userEdit.password)
                         {
@@ -71,7 +71,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                         if (user.oldPassword == userEdit.password)
                         {
@@ -99,7 +99,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                         if (user.oldPassword == userEdit.password)
                         {
@@ -131,12 +131,12 @@ namespace CanteenWebApplication.Controllers
         public ActionResult UserDelete()
         {
 
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
+            var UserSession = Session["username"];
 
             using (var context = new CanteenDBContext())
             {
                 
-                var userRemove = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                var userRemove = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                 context.Users.Remove(userRemove);
                 context.SaveChanges();

@@ -18,7 +18,7 @@ namespace Admin___Edit_Delete_food
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Page
     {
         private object NavigationService;
 
@@ -53,7 +53,6 @@ namespace Admin___Edit_Delete_food
         private void Page1_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri("Page1.xaml , UriKind.Relative");
-            this.NavigationService.Navigate(uri);
         }
     }
 }
