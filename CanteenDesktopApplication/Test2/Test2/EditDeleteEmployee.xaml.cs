@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace Admin___Edit_Delete_food
+namespace Test2
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for EditDeleteEmployee.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class EditDeleteEmployee : Page
     {
-        public Window1()
+        public EditDeleteEmployee()
         {
             InitializeComponent();
         }
-
-
     }
 }

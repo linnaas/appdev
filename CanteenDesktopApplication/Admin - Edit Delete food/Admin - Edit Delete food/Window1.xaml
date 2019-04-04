@@ -86,12 +86,7 @@
             />
 
 
-        <Button
-            x:Name="Page1"
-            Style="{StaticResource MainButtonStyle}"
-            Content="Page1" Click="Page1_Click"
-            
-            />
+
 
 
 
