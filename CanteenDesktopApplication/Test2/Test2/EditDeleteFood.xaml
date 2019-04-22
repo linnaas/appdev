@@ -76,7 +76,15 @@
             Grid.Row="2"
             Grid.ColumnSpan="1"
             Margin="10,5"
-            Width="150"
+            Width="150" 
+            Click="SearchButton_Click"
+            />
+
+        <ListBox
+            x:Name="ListBox"
+            Grid.Column="1"
+            Grid.Row="3"
+            
             />
 
 
