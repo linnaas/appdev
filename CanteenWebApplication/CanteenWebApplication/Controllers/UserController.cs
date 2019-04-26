@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using CanteenWebApplication.Models;
+using System.Dynamic;
+using CanteenWebApplication.DAO;
+using Microsoft.AspNetCore.Http;
 
 namespace CanteenWebApplication.Controllers
 {
     public class UserController : Controller
     {
 
-         // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
+
+
+        // Gets information about current user-session, and returns it to View (UserProfile.cshtml)
         public ActionResult UserProfile()
         {
-            string tempUserSession = "jola";
+            var UserSession = Session["username"] ;
+
             using (var context = new CanteenDBContext())
             {
-                var userInfo = context.Users.Where(u => u.username == tempUserSession).FirstOrDefault<user_list>();
+                var userInfo = context.Users.Where(u => u.username == UserSession).FirstOrDefault<user_list>();
 
                 return View(userInfo);
                 
@@ -29,8 +35,8 @@ namespace CanteenWebApplication.Controllers
         public ActionResult UserProfile(user_list user, string submit)
         {
 
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
-            
+            var UserSession = Session["username"];
+
             if (submit == "Save new password") // If the submit-button for saving password is pressed
             {
 
@@ -38,7 +44,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
                     
                         if (user.oldPassword == userEdit.password)
                         {
@@ -57,7 +63,6 @@ namespace CanteenWebApplication.Controllers
                         return Content(test);
                     }
                 }
-                string test2 = "confirmation password not equal";
                 return Content(test2);
 
             }
@@ -68,7 +73,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                         if (user.oldPassword == userEdit.password)
                         {
@@ -96,7 +101,7 @@ namespace CanteenWebApplication.Controllers
                 {
                     using (var context = new CanteenDBContext())
                     {
-                        var userEdit = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                        var userEdit = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                         if (user.oldPassword == userEdit.password)
                         {
@@ -128,12 +133,12 @@ namespace CanteenWebApplication.Controllers
         public ActionResult UserDelete()
         {
 
-            var userSession = "jola"; // Session["usernameS"] as List<user_list>;
+            var UserSession = Session["username"];
 
             using (var context = new CanteenDBContext())
             {
                 
-                var userRemove = context.Users.Where(x => x.username == userSession).FirstOrDefault<user_list>();
+                var userRemove = context.Users.Where(x => x.username == UserSession).FirstOrDefault<user_list>();
 
                 context.Users.Remove(userRemove);
                 context.SaveChanges();

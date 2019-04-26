@@ -1,12 +1,16 @@
-﻿@model CanteenWebApplication.Models.user_list
-@Scripts.Render("~/bundles/jquery")
-@Styles.Render("~/Content/css")
+﻿@model CanteenWebApplication.Models.User
+@*@Scripts.Render("~/bundles/jquery")
+@Styles.Render("~/Content/css")*@
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="~/css/" />
+<link rel="stylesheet" href="~/lib/jquery/" />
+
 
 <html>
 <head>
@@ -55,7 +59,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <label class="error">@Html.DisplayFor(model => model.LoginError)</label>
+                        @*<label class="error">@Html.DisplayFor(model => model.LoginError)</label>*@
                     </td>
                 </tr>
                 <tr>
@@ -72,5 +76,5 @@
 </body>
 </html>
 
-@Scripts.Render("~/Scripts/JavaScript.js")
-@Styles.Render("~/Content/Site.css")
+@*@Scripts.Render("~/Scripts/JavaScript.js")
+@Styles.Render("~/Content/Site.css")*@

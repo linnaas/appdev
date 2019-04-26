@@ -1,91 +1,53 @@
-﻿using System.Configuration;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 
 
-namespace CanteenWebApplication 
+namespace CanteenWebApplication.Models
 {
-    public class User 
+    public class User
     {
-
-        
-
-
-        //protected void EditProfileButton_Click(object sender, EventArgs e)
-        //{
-
-        //    string ConnectionS = "Server=remotemysql.com;Database=FgzHi9GyXc;Uid=FgzHi9GyXc;Pwd=c7V92jzX5b;";
-        //    using (MySqlConnection con = new MySqlConnection(ConnectionS))
-        //    {
-        //        con.Open();
-        //        using (MySqlCommand cmd = con.CreateCommand())
-        //        {
-        //            cmd.CommandText = @"select count(*) from user_list where username=@User_N and password=@Pword";
-        //            cmd.Parameters.Add(new MySqlParameter("User_N", Username.Text));
-        //            cmd.Parameters.Add(new MySqlParameter("Pword", Password.Text));
-        //            int i = Convert.ToInt32(cmd.ExecuteScalar());
-
-        //            if (i > 0)
-        //            {
-        //                Session["usernameS"] = Username.Text;
-        //                Response.Redirect("~/loggedin.aspx");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("Username or Password is invalid");
-        //            }
-        //        }
-        //    }
-        //}
-        public string Username
+        public User(string username, string password, string first_name, string last_name, string email, string phone)
         {
-            get
-            {
-                return Username;
-            }
-      
-            set
-            {
-
-            }
-
+            this.username = username;
+            this.password = password;
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.email = email;
+            this.phone = phone;
         }
+
         public string username { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
+
         public string password { get; set; }
+
+        public string first_name { get; set; }
+
+        public string last_name { get; set; }
+
         public string email { get; set; }
+
         public string phone { get; set; }
 
+        public bool loginValidation(string username, string password)
+        {
+            bool valid = false;
 
+            using (MySqlConnection conn = new MySqlConnection("server = 178.62.232.207; port = 3306; database = gruppe4; user = gruppe4; password = apputvikling;"))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM user_list WHERE username='" + username + "' and password='" + password + "'", conn);
 
-        public string tempUsername { get; set; }
-        public string tempFirstName { get; set; }
-        public string tempLastName { get; set; }
-        public string tempPassword { get; set; }
-        public string tempEmail { get; set; }
-        public string tempPhoneNumber { get; set; }
+                valid = Convert.ToBoolean(cmd.ExecuteScalar());
+                return valid;
 
-        
-
-
-
+            }
+        }
 
     }
 }

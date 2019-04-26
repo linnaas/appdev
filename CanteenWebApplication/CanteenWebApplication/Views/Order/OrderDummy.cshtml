@@ -1,0 +1,112 @@
+﻿@model CanteenWebApplication.Models.Food
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderDummy</title>
+    <style>
+        
+        .shoppingCart {
+            position: absolute;
+            display: block;
+            background-color: lightgray;
+            width: 20%;
+            height: 80%;
+            top: 10%;
+            right: 20%;
+            border-radius: 2px;
+        }
+        .oderArea {
+            position: absolute;
+            display: block;
+            background-color: lightblue;
+            width: 35%;
+            height: 80%;
+            top: 10%;
+            left: 20%;
+            border-radius: 2px;
+        
+        }
+        #overskrift {
+            text-align: center;
+        }
+        #buttons {
+            position: absolute;
+            text-align: center;
+            bottom: 3%;
+            right: 40%;
+        }
+        .menu {
+            left: 20%;
+            position: absolute;
+        }
+        #activeShopCart {
+            left: 20%;
+            position: absolute;
+        }
+        
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("", "OrderDummy", FormMethod.Post))
+    {
+       <h1 id="overskrift">Order Food</h1>
+       <div class="oderArea">
+           <div class="menu">
+           @if (Model != null)
+           {
+               if (Model.foodinfo.Count > 0)
+               {
+                   <h2 id="overskrift">Menu</h2>
+                   <br />
+                   <table>
+                       <tr>
+                           <th>Food ID </th>
+                           <th>Food Name</th>
+                           <th>Price</th>
+                           <th>Description</th>
+                           <th></th>
+                       </tr>
+                       @foreach (var item in Model.foodinfo)
+                       {
+                           <tr>
+                               <td>@Html.DisplayFor(m => item.food_id)</td>
+                               <td>@Html.DisplayFor(m => item.food_name)</td>
+                               <td>@Html.DisplayFor(m => item.price)</td>
+                               <td>@Html.DisplayFor(m => item.description)</td>
+                               <td>@Html.ActionLink("Order", "OrderDummy", "Order")</td>
+                           </tr>
+                       }
+                   </table>
+               }
+           }
+            </div>
+           
+
+
+       </div>
+       <div class="shoppingCart">
+           <h2 id="overskrift">Cart</h2>
+           <br />
+           <div id="activeShopCart">
+           <table>
+               <tr>
+                   <th>Food id </th>
+                   <th>Food Name </th>
+                   <th>Price </th>
+               </tr>
+           </table>
+           </div>
+           <div id="buttons">
+               <input type="button" value="order" id="btnOrder" class="btn btn-success" />
+               <input type="button" value="clear" id="btnClear" class="btn btn-success" />
+           </div>
+       </div>
+    }
+</body>
+</html>

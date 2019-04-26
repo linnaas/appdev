@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\CanteenWebApplication",
-    "\\CanteenWebApplication\\Controllers",
-    "\\CanteenWebApplication\\Models",
-    "\\CanteenWebApplication\\Views",
-    "\\CanteenWebApplication\\Views\\User"
+    "\\CanteenWebApplication\\Controllers"
   ],
-  "SelectedNode": "\\CanteenWebApplication\\Views\\User\\UserProfile.cshtml",
+  "SelectedNode": "\\CanteenWebApplication\\Controllers\\OrderController.cs",
   "PreviewInSolutionExplorer": false
 }
