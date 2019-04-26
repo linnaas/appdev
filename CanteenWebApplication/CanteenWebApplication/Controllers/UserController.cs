@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using CanteenWebApplication.Models;
+using System.Dynamic;
+using CanteenWebApplication.DAO;
+using Microsoft.AspNetCore.Http;
 
 namespace CanteenWebApplication.Controllers
 {
@@ -60,7 +63,6 @@ namespace CanteenWebApplication.Controllers
                         return Content(test);
                     }
                 }
-                string test2 = "confirmation password not equal";
                 return Content(test2);
 
             }

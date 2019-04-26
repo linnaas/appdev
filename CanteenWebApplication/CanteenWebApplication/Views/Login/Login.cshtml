@@ -1,12 +1,16 @@
-﻿@model CanteenWebApplication.Models.user_list
-@Scripts.Render("~/bundles/jquery")
-@Styles.Render("~/Content/css")
+﻿@model CanteenWebApplication.Models.User
+@*@Scripts.Render("~/bundles/jquery")
+@Styles.Render("~/Content/css")*@
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="~/css/" />
+<link rel="stylesheet" href="~/lib/jquery/" />
+
 
 <html>
 <head>
@@ -17,48 +21,53 @@
             position: absolute;
             left: 40%;
             top: 40%;
-            border: 1px solid #ccc;
-            padding: 10px 10px;
+            padding: 8px 8px;
         }
-        .field-validation-error {
-            color:red;
+
+        .error {
+            color: red;
         }
     </style>
 </head>
 <body>
     <div id="loginArea">
-       
-        @using (Html.BeginForm("Autorize", "Login",FormMethod.Post))
+
+        @using (Html.BeginForm("LoginAction", "Login", FormMethod.Post))
         {
-        <table>
-            <tr>
-                <td></td>
-                <td>@Html.LabelFor(Model => Model.username)</td>
-                <td>@Html.EditorFor(model => model.username)</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    @Html.ValidationMessageFor(model => model.username)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>@Html.LabelFor(model => Model.password)</td>
-                <td>@Html.EditorFor(model => model.password)</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    @Html.ValidationMessageFor(model => model.password)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" name="Login" value="Login" /></td>
-                <td><input type="reset" name="Reset" value="Reset" /></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>@Html.LabelFor(Model => Model.username)</td>
+                    <td>@Html.EditorFor(model => model.username)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.username)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.LabelFor(model => Model.password)</td>
+                    <td>@Html.EditorFor(model => model.password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.password)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @*<label class="error">@Html.DisplayFor(model => model.LoginError)</label>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="Login" value="Login" /></td>
+                    <td><input type="reset" name="Reset" value="Reset" /></td>
+                </tr>
+            </table>
         }
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
@@ -67,5 +76,5 @@
 </body>
 </html>
 
-@Scripts.Render("~/Scripts/JavaScript.js")
-@Styles.Render("~/Content/Site.css")
+@*@Scripts.Render("~/Scripts/JavaScript.js")
+@Styles.Render("~/Content/Site.css")*@

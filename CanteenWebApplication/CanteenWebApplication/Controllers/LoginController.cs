@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using CanteenWebApplication.Models;
+using System.Dynamic;
+using CanteenWebApplication.DAO;
+using Microsoft.AspNetCore.Http;
 
 namespace CanteenWebApplication.Controllers
 {
@@ -16,33 +17,51 @@ namespace CanteenWebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult Autorize(CanteenWebApplication.Models.user_list userModel)
+        public ActionResult LoginAction(User user)
         {
-            using (CanteenDBContext db = new CanteenDBContext())
+            if (ModelState.IsValid)
             {
-                var userDetails = db.Users.Where(x => x.username == userModel.username && x.password == userModel.password).FirstOrDefault();
-                if (userDetails == null)
+                if (user.loginValidation(user.username, user.password))
                 {
-                    userModel.LoginErrorMessage = "The username or password is incorrect";
-                    return View("Login", userModel);
+                    HttpContext.Session.SetString("userSession", user.username);
+                    //Session["username"] = user.username;
+                    return RedirectToAction("Login", "Home");
                 }
                 else
                 {
-                    Session["username"] = userDetails.username;
-                    return RedirectToAction("Midlertidig", "Midlertidig");
+                    ViewBag.Message = "Invalid Username or Password";
+                    return View("Login", user);
                 }
             }
-
-
+            else
+            {
+                return View();
+            }
+            
+            //using (CanteenDBContext database = new CanteenDBContext())
+            //{
+            //    var userDetails = database.User.Where(x => x.username == users.username && x.password == users.password).FirstOrDefault();
+            //    if (userDetails == null)
+            //    {
+            //        User.LoginError = "The username or password is incorrect";
+            //        return View("Login", users);
+            //    }
+            //    else
+            //    {
+            //        Session["username"] = userDetails.username;
+            //        return RedirectToAction("Index", "Home");
+            //    }
+            //}
+            
         }
 
         public ActionResult Logout()
         {
-            Session.Abandon();
+            HttpContext.Session.Clear();
+            //Session.Abandon();
             return RedirectToAction("Login", "Login");
         }
     }
 }
-
 
 
